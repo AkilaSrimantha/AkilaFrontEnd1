@@ -47,7 +47,6 @@ npm run dev
 
 ## 🧪 Testing & CI
 
-Coming soon — this project will include:
 Unit & integration testing
 GitHub Actions CI pipeline
 Automated linting and formatting
