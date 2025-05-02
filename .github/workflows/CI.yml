@@ -1,9 +1,9 @@
-name: Deploy Travel Management System
+name: Deploy Library Management System
 
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main  # Trigger only on main branch
 
 jobs:
   build-and-deploy:
@@ -23,15 +23,14 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install server dependencies
+      - name: Install backend dependencies
         working-directory: ./server
         run: npm install
 
-      - name: Lint and build server
+      - name: Build backend (if using TypeScript or Babel)
         working-directory: ./server
         run: |
-          npm run lint
-          npm run build || echo "Skip build if not defined"
+          npm run build || echo "No build step for backend"
 
       - name: Install frontend dependencies
         working-directory: ./client
@@ -41,6 +40,5 @@ jobs:
         working-directory: ./client
         run: npm run build
 
-      - name: Deploy (example using Heroku CLI)
-        run: echo "Add your deployment step here (e.g., rsync, scp, Docker, or Heroku/GitHub Pages)"
-
+      - name: Deploy placeholder step
+        run: echo "✅ Replace this step with deployment to Render, Heroku, or another provider"
